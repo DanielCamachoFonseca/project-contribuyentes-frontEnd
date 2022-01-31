@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2>Lista riesgos</h2>
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>Fecha desde</th>
+            <th>Fecha hasta</th>
+            <th>Estado</th>
+            <th>Usuario auditoria</th>
+            <th>Fecha auditoria</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let riesgo of riesgos">
+            <td>{{riesgo.nombre}}</td>
+            <td>{{riesgo.fecha_desde}}</td>
+            <td>{{riesgo.fecha_hasta}}</td>
+            <td>{{riesgo.estado}}</td>
+            <td>{{riesgo.usuario_auditoria}}</td>
+            <td>{{riesgo.fecha_auditoria}}</td>
+            <td>
+              <button (click)="actualizarRiesgo(riesgo.id)" class="btn btn-primary">Editar</button>
+              <button (click)="eliminarRiesgo(riesgo.id)" class="btn btn-danger" style="margin-left: 10px">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

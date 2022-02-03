@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <h2>Lista de Matriz Segmentos</h2>
+    </div>
+    <div class="col-2">
+      <button (click)="agregarBoton()" class="btn btn-success">Agregar segmento</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Usuario auditoria</th>
+            <th>Fecha auditoria</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let segmento of segmentos">
+            <td>{{segmento.id}}</td>
+            <td>{{segmento.nombre}}</td>
+            <td>{{segmento.estado}}</td>
+            <td>{{segmento.usuario_auditoria}}</td>
+            <td>{{segmento.fecha_auditoria}}</td>
+            <td>
+              <button (click)="actualizarSegmento(segmento.id)" class="btn btn-primary">Editar</button>
+              <button (click)="eliminarSegmento(segmento.id)" class="btn btn-danger" style="margin-left: 10px">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

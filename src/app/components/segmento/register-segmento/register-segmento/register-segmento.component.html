@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3 class="text-center">Registro de Matriz de Segmento</h3>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Nombre: </label>
+          <input type="text" class="form-control" id="nombre" [(ngModel)]="segmento.nombre" name="nombre" placeholder="Digite el nombre">
+        </div>
+        <button class="btn btn-success">Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,21 @@
 <div class="container">
   <div class="row">
+    <div class="col-10">
+      <h2>Lista de Matriz de riesgo</h2>
+    </div>
+    <div class="col-2">
+      <button (click)="agregarBoton()" class="btn btn-success">Agregar riesgo</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
     <div class="col-12">
-      <h2>Lista riesgos</h2>
       <table class="table table-striped">
         <thead class="table-dark">
           <tr>
+            <th>Id</th>
             <th>Nombre</th>
             <th>Fecha desde</th>
             <th>Fecha hasta</th>
@@ -16,6 +27,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let riesgo of riesgos">
+            <td>{{riesgo.id}}</td>
             <td>{{riesgo.nombre}}</td>
             <td>{{riesgo.fecha_desde}}</td>
             <td>{{riesgo.fecha_hasta}}</td>

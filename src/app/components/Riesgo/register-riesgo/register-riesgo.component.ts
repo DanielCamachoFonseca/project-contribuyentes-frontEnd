@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Riesgo } from 'src/app/Riesgo-entity/riesgo';
-import { RiesgoService } from 'src/app/services/riesgo.service';
+import { Riesgo } from '../RiesgoModel/riesgo';
+import { RiesgoService } from 'src/app/services/riesgo-service/riesgo.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-riesgo',
@@ -27,6 +28,7 @@ export class RegisterRiesgoComponent implements OnInit {
 
   goToListRiesgo(){
     this.router.navigate(['/riesgos']);
+    swal('Matriz de Riesgo registrado',  `${this.riesgo.nombre} ha sido registrado!`);
   }
 
   onSubmit(){

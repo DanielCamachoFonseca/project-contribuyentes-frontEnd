@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Riesgo } from '../Riesgo-entity/riesgo';
+import { Riesgo } from '../../components/Riesgo/RiesgoModel/riesgo';
 
 @Injectable({
   providedIn: 'root'
@@ -44,8 +44,8 @@ export class RiesgoService {
    * @param riesgo
    * @returns
    */
-  updateRiesgo(id:number, riesgo: Riesgo) : Observable<Object>{
-    return this.httpClient.put(`${this.updateURL}/${id}`, riesgo);
+  actualizarRiesgo(id:number, riesgo: Riesgo) : Observable<object> {
+    return this.httpClient.put(`${this.updateURL}/${id}`,riesgo);
   }
 
   /**
@@ -53,8 +53,8 @@ export class RiesgoService {
    * @param id
    * @returns
    */
-  searchRiesgoForId(id:number): Observable<Riesgo>{
-    return this.httpClient.get<Riesgo>(`${this.updateURL}/${id}`);
+  obtenerRiesgoPorId(id:number):Observable<Riesgo>{
+    return this.httpClient.get<Riesgo>(`${this.searchIdURL}/${id}`);
   }
 
   /**

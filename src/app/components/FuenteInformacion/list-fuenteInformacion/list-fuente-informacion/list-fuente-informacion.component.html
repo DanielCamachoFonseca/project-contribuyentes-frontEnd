@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-11">
+      <h2>Lista Fuente de Información</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Id Fuente Información</th>
+            <th>Nit</th>
+            <th>Periodo</th>
+            <th>Id Variable</th>
+            <th>Nombre variable</th>
+            <th>Id Segmento</th>
+            <th>Nombre Segmento</th>
+            <th>Valor Variable</th>
+            <th>Usuario auditoria</th>
+            <th>Fecha auditoria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fuenteInformacion of fuentesInformacion | slice:desde:hasta">
+            <td>{{fuenteInformacion.id_fuente_informacion}}</td>
+            <td>{{fuenteInformacion.nit}}</td>
+            <td>{{fuenteInformacion.periodo}}</td>
+            <td>{{fuenteInformacion.variable_id}}</td>
+            <td>{{fuenteInformacion.nombre_variable}}</td>
+            <td>{{fuenteInformacion.segmento_id}}</td>
+            <td>{{fuenteInformacion.nombre_segmento}}</td>
+            <td>{{fuenteInformacion.valor_variable}}</td>
+            <td>{{fuenteInformacion.usuario_auditoria}}</td>
+            <td>{{fuenteInformacion.fecha_auditoria}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <mat-paginator [length]="fuentesInformacion?.length"
+                     [pageSize]="pageSize"
+                     aria-label="Select page"
+                     (page)="cambiarPagina($event)">
+      </mat-paginator>
+
+    </div>
+  </div>
+</div>

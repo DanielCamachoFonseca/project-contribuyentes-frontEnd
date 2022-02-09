@@ -26,7 +26,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let riesgo of riesgos">
+          <tr *ngFor="let riesgo of riesgos | slice:desde:hasta">
             <td>{{riesgo.id}}</td>
             <td>{{riesgo.nombre}}</td>
             <td>{{riesgo.fecha_desde}}</td>
@@ -41,6 +41,11 @@
           </tr>
         </tbody>
       </table>
+      <mat-paginator [length]="riesgos?.length"
+                     [pageSize]="pageSize"
+                     aria-label="Select page"
+                     (page)="cambiarPagina($event)">
+      </mat-paginator>
     </div>
   </div>
 </div>

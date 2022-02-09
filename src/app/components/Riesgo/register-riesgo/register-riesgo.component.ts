@@ -21,7 +21,6 @@ export class RegisterRiesgoComponent implements OnInit {
 
   saveRiesgo(){
     this.riesgoService.registerRiesgo(this.riesgo).subscribe(date => {
-      console.log(date);
       this.goToListRiesgo();
     }, error => console.log(error));
   }

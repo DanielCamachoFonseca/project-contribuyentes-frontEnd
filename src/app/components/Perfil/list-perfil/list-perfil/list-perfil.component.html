@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-11">
+      <h2>Lista Perfil</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Id perfil</th>
+            <th>Nit</th>
+            <th>Periodo</th>
+            <th>Id Matriz de Riesgo</th>
+            <th>Nombre Matriz</th>
+            <th>Id del segmento</th>
+            <th>Nombre Segmento</th>
+            <th>Fecha desde:</th>
+            <th>Peso</th>
+            <th>Valor Perfil</th>
+            <th>Valor Eje X</th>
+            <th>Valor Eje Y</th>
+            <th>Valor Incumplimiento</th>
+            <th>Valor Log</th>
+            <th>Numero del Cuadrante</th>
+            <th>Usuario Auditoria</th>
+            <th>Fecha auditoria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Perfil of perfiles | slice:desde:hasta">
+            <td>{{Perfil.id_perfil}}</td>
+            <td>{{Perfil.nit}}</td>
+            <td>{{Perfil.periodo}}</td>
+            <td>{{Perfil.matriz_riesgo_id}}</td>
+            <td>{{Perfil.nombre_matriz}}</td>
+            <td>{{Perfil.segmento_id}}</td>
+            <td>{{Perfil.nombre_segmento}}</td>
+            <td>{{Perfil.fecha_desde}}</td>
+            <td>{{Perfil.peso}}</td>
+            <td>{{Perfil.valor_perfil}}</td>
+            <td>{{Perfil.valor_eje_x}}</td>
+            <td>{{Perfil.valor_eje_y}}</td>
+            <td>{{Perfil.valor_incumplimiento}}</td>
+            <td>{{Perfil.valor_log}}</td>
+            <td>{{Perfil.numero_cuadrante}}</td>
+            <td>{{Perfil.usuario_auditoria}}</td>
+            <td>{{Perfil.fecha_auditoria}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <mat-paginator [length]="perfiles?.length"
+                     [pageSize]="pageSize"
+                     aria-label="Select page"
+                     (page)="cambiarPagina($event)">
+      </mat-paginator>
+
+    </div>
+  </div>
+</div>

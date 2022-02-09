@@ -16,16 +16,15 @@ export class UpdateRiesgoComponent implements OnInit {
 
   constructor(
     private riesgoService: RiesgoService,
-    private router:Router,
-    private route:ActivatedRoute
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.Editar();
-
   }
 
-  Editar(){
+  Editar() {
     this.id = this.route.snapshot.params['id'];
     this.riesgoService.obtenerRiesgoPorId(this.id).subscribe(
       (date) => {
@@ -35,19 +34,22 @@ export class UpdateRiesgoComponent implements OnInit {
     );
   }
 
-  Actualizar(){
-    this.riesgoService.actualizarRiesgo(this.riesgo.id, this.riesgo).subscribe(date => {
-      this.redirectUserList();
-      console.log(date);
-     },
-     (error) => console.log(error)
-   );
+  Actualizar() {
+    this.riesgoService.actualizarRiesgo(this.riesgo.id, this.riesgo).subscribe(
+      (date) => {
+        this.redirectUserList();
+      },
+      (error) => console.log(error)
+    );
   }
 
   //Redirección a lista de usuarios
   redirectUserList() {
     this.router.navigate(['/riesgos']);
-    swal('Matriz de riesgo actualizado',`${this.riesgo.nombre} ha sido actualizado con exito`,`success`);
+    swal(
+      'Matriz de riesgo actualizado',
+      `${this.riesgo.nombre} ha sido actualizado con exito`,
+      `success`
+    );
   }
-
 }

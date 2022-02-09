@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-11">
+      <h2>Lista de Variables</h2>
+    </div>
+    <div class="col-1">
+      <button (click)="agregarBoton()" class="btn btn-success">Agregar variable</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Fuente sistema</th>
+            <th>Fuente información</th>
+            <th>Formula</th>
+            <th>Periodicidad</th>
+            <th>Procedimiento base de datos</th>
+            <th>Estado</th>
+            <th>Usuario auditoria</th>
+            <th>Fecha auditoria</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let variable of variables | slice:desde:hasta">
+            <td>{{variable.id}}</td>
+            <td>{{variable.nombre}}</td>
+            <td>{{variable.fuente_sistema}}</td>
+            <td>{{variable.fuente_informacion}}</td>
+            <td>{{variable.formula}}</td>
+            <td>{{variable.periodicidad}}</td>
+            <td>{{variable.procedimiento_base_datos}}</td>
+            <td>{{variable.estado}}</td>
+            <td>{{variable.usuario_auditoria}}</td>
+            <td>{{variable.fecha_auditoria}}</td>
+            <td>
+              <button (click)="actualizarVariable(variable.id)" class="btn btn-primary">Editar</button>
+              <button (click)="eliminarVariable(variable.id)" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <mat-paginator [length]="variables?.length"
+                     [pageSize]="pageSize"
+                     aria-label="Select page"
+                     (page)="cambiarPagina($event)">
+      </mat-paginator>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3 class="text-center">Registro de Matriz de Variable</h3>
+
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Nombre: </label>
+          <input type="text" class="form-control" id="nombre" [(ngModel)]="variable.nombre" name="nombre" placeholder="Digite el nombre">
+        </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Fuente sistema: </mat-label>
+          <mat-select placeholder="Fuente sistema" [(ngModel)]="variable.fuente_sistema" name="fuente_sistema" id="fuente_sistema">
+            <mat-option value="BASE DATOS">BASE DATOS</mat-option>
+            <mat-option value="NUBE">NUBE</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="form-group">
+          <label>Fuente de información: </label>
+          <input type="text" class="form-control" id="fuente_informacion" [(ngModel)]="variable.fuente_informacion" name="fuente_informacion" placeholder="Digite la fuente de información">
+        </div>
+        <div class="form-group">
+          <label>Formula: </label>
+          <input type="text" class="form-control" id="formula" [(ngModel)]="variable.formula" name="formula" placeholder="Digite la formula">
+        </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Periodicidad: </mat-label>
+          <mat-select placeholder="Periodicidad" [(ngModel)]="variable.periodicidad" name="periodicidad" id="periodicidad">
+            <mat-option value="MENSUAL">MENSUAL</mat-option>
+            <mat-option value="ANUAL">ANUAL</mat-option>
+            <mat-option value="DIARIO">DIARIO</mat-option>
+            <mat-option value="SEMANAL">SEMANAL</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <th></th>
+        <button class="btn btn-success">Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>

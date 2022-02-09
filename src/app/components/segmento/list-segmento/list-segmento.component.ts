@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SegmentoService } from 'src/app/services/segmento-service/segmento.service';
 import swal from 'sweetalert2';
@@ -12,6 +13,9 @@ import { Segmento } from '../SegmentoModel/segmento';
 export class ListSegmentoComponent implements OnInit {
 
   segmentos: Segmento[];
+  pageSize = 5;
+  desde:number = 0;
+  hasta:number = 5;
 
   constructor(private segmentoService: SegmentoService, private router: Router, private _route:ActivatedRoute,) { }
 
@@ -59,5 +63,11 @@ export class ListSegmentoComponent implements OnInit {
           })
         }
       })
+    }
+
+    cambiarPagina(e:PageEvent) {
+      console.log(e);
+      this.desde = e.pageIndex * e.pageSize;
+      this.hasta = this.desde + e.pageSize;
     }
   }

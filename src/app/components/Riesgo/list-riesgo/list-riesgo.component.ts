@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 import { Riesgo } from '../RiesgoModel/riesgo';
 import { RiesgoService } from 'src/app/services/riesgo-service/riesgo.service';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-list-riesgo',
@@ -12,6 +13,9 @@ import { RiesgoService } from 'src/app/services/riesgo-service/riesgo.service';
 export class ListRiesgoComponent implements OnInit {
 
   riesgos: Riesgo[];
+  pageSize = 5;
+  desde:number = 0;
+  hasta:number = 5;
 
   constructor(private riesgoService: RiesgoService, private router: Router) {
 
@@ -61,6 +65,12 @@ export class ListRiesgoComponent implements OnInit {
           })
         }
       })
+    }
+
+    cambiarPagina(e:PageEvent) {
+      console.log(e);
+      this.desde = e.pageIndex * e.pageSize;
+      this.hasta = this.desde + e.pageSize;
     }
   }
 

@@ -29,7 +29,7 @@ export class UpdateSegmentoComponent implements OnInit {
       (date) => {
         this.segmento = date;
       },
-      (error) => console.log(error)
+      error => console.log(error)
     );
   }
 
@@ -40,7 +40,7 @@ export class UpdateSegmentoComponent implements OnInit {
         (date) => {
           this.redirectToList();
         },
-        (error) => console.log(error)
+        error => console.log(error)
       );
   }
 

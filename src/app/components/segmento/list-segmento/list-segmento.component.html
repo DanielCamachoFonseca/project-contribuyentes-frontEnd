@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-10">
-      <h2>Lista de Matriz Segmentos</h2>
+      <h2>Lista de Segmentos</h2>
     </div>
     <div class="col-2">
       <button (click)="agregarBoton()" class="btn btn-success">Agregar segmento</button>
@@ -24,7 +24,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let segmento of segmentos">
+          <tr *ngFor="let segmento of segmentos | slice:desde:hasta">
             <td>{{segmento.id}}</td>
             <td>{{segmento.nombre}}</td>
             <td>{{segmento.estado}}</td>
@@ -37,6 +37,11 @@
           </tr>
         </tbody>
       </table>
+      <mat-paginator [length]="segmentos?.length"
+                     [pageSize]="pageSize"
+                     aria-label="Select page"
+                     (page)="cambiarPagina($event)">
+      </mat-paginator>
     </div>
   </div>
 </div>

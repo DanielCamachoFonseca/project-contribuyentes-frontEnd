@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <h2>Lista de Matriz Cuadrante</h2>
+    </div>
+    <div class="col-3">
+      <button (click)="agregarBoton()" class="btn btn-success">Agregar Matriz Cuadrante</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Id Matriz Riesgo Cuadrante</th>
+            <th>Nombre Matriz Riesgo</th>
+            <th>Numero Cuadrante</th>
+            <th>Valor Eje X Desde</th>
+            <th>Valor Eje X Hasta</th>
+            <th>Valor Eje Y Desde</th>
+            <th>Valor Eje Y Hasta</th>
+            <th>Color</th>
+            <th>Estado</th>
+            <th>Usuario auditoria</th>
+            <th>Fecha auditoria</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let RiesgoCuadrante of riesgoCuadrantes | slice:desde:hasta">
+            <td>{{RiesgoCuadrante.id_matriz_riesgo_cuadrante}}</td>
+            <td>{{RiesgoCuadrante.id_matriz_riesgo.nombre}}</td>
+            <td>{{RiesgoCuadrante.numero_cuadrante}}</td>
+            <td>{{RiesgoCuadrante.valor_eje_x_desde}}</td>
+            <td>{{RiesgoCuadrante.valor_eje_x_hasta}}</td>
+            <td>{{RiesgoCuadrante.valor_eje_y_desde}}</td>
+            <td>{{RiesgoCuadrante.valor_eje_y_hasta}}</td>
+            <td>{{RiesgoCuadrante.color}}</td>
+            <td>{{RiesgoCuadrante.estado}}</td>
+            <td>{{RiesgoCuadrante.usuario_auditoria}}</td>
+            <td>{{RiesgoCuadrante.fecha_auditoria}}</td>
+            <td>
+              <button (click)="actualizarRiesgoCuadrante(RiesgoCuadrante.id_matriz_riesgo_cuadrante)" class="btn btn-primary">Editar</button>
+              <button (click)="eliminarRiesgoCuadrante(RiesgoCuadrante.id_matriz_riesgo_cuadrante)" class="btn btn-danger mt-2">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <mat-paginator [length]="riesgoCuadrantes?.length"
+                     [pageSize]="pageSize"
+                     aria-label="Select page"
+                     (page)="cambiarPagina($event)">
+      </mat-paginator>
+
+    </div>
+  </div>
+</div>

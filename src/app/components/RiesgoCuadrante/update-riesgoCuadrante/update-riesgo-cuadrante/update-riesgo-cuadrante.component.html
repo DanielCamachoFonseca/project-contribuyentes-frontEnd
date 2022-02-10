@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3 class="text-center">Edición Matriz Cuadrante</h3>
+      <form action="">
+       <div class="form-group">
+         <label for="id_matriz_riesgo" class="col-form-label">Nombre Matriz De Riesgo</label>
+          <select [compareWith]="compararRiesgo" name="id_matriz_riesgo" id="id_matriz_riesgo" [(ngModel)]="riesgoCuadrante.id_matriz_riesgo" class="form-control">
+            <option [ngValue]="undefined">--- Seleccionar nombre Matriz de Riesgo ---</option>
+            <option *ngFor="let riesgo of riesgos" [ngValue]="riesgo">{{ riesgo.nombre }}</option>
+          </select>
+       </div>
+        <div class="form-group">
+          <label>Numero Cuadrante </label>
+          <input type="text" class="form-control" id="numero_cuadrante" [(ngModel)]="riesgoCuadrante.numero_cuadrante" name="fecha_desde" placeholder="Digite el numero de cuadrante">
+        </div>
+        <div class="form-group">
+          <label>Valor Eje X Desde</label>
+          <input type="text" class="form-control" id="valor_eje_x_desde" [(ngModel)]="riesgoCuadrante.valor_eje_x_desde" name="valor_eje_x_desde" placeholder="Digite el valor X desde Ej 0.1">
+        </div>
+        <div class="form-group">
+          <label>Valor Eje X Hasta</label>
+          <input type="text" class="form-control" id="valor_eje_x_hasta" [(ngModel)]="riesgoCuadrante.valor_eje_x_hasta" name="valor_eje_x_hasta" placeholder="Digite el valor X hasta Ej 0.1">
+        </div>
+        <div class="form-group">
+          <label>Digite el valor Y Desde</label>
+          <input type="text" class="form-control" id="valor_eje_y_desde" [(ngModel)]="riesgoCuadrante.valor_eje_y_desde" name="valor_eje_y_desde" placeholder="Digite el valor Y desde Ej 0.1">
+        </div>
+        <div class="form-group">
+          <label>Digite el valor Y Hasta</label>
+          <input type="text" class="form-control" id="valor_eje_y_hasta" [(ngModel)]="riesgoCuadrante.valor_eje_y_hasta" name="valor_eje_y_hasta" placeholder="Digite el valor Y hasta Ej 0.1">
+        </div>
+        <div class="form-group">
+          <label>Color</label>
+          <input type="text" class="form-control" id="color" [(ngModel)]="riesgoCuadrante.color" name="color" placeholder="Digite el Color">
+        </div>
+        <button (click)="Actualizar()" class="btn btn-success">Actualizar</button>
+      </form>
+    </div>
+  </div>
+</div>

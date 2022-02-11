@@ -1,5 +1,5 @@
 export class Riesgo {
-  id:number;
+  id_matriz_riesgo:number;
   nombre:string;
   fecha_desde: string;
   fecha_hasta: string;

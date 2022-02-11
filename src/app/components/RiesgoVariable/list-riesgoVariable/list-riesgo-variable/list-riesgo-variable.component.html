@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <h2>Lista de Matriz Variable</h2>
+    </div>
+    <div class="col-3">
+      <button (click)="agregarBoton()" class="btn btn-success">Agregar Matriz Variable</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead class="table-secondary">
+          <tr>
+            <th>Id Matriz Riesgo Variable</th>
+            <th>Nombre Matriz Riesgo</th>
+            <th>Nombre Variable</th>
+            <th>Nombre Segmento</th>
+            <th>Fuente Peso Y</th>
+            <th>Fuente Eje X</th>
+            <th>Fuente Eje Y</th>
+            <th>Fuente Peso Contribuyente</th>
+            <th>Estado</th>
+            <th>Usuario auditoria</th>
+            <th>Fecha auditoria</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let RiesgoVariable of riesgoVariables | slice:desde:hasta">
+            <td>{{RiesgoVariable.id_matriz_riesgo_variable}}</td>
+            <td>{{RiesgoVariable.id_matriz_riesgo.nombre}}</td>
+            <td>{{RiesgoVariable.id_variable.nombre}}</td>
+            <td>{{RiesgoVariable.id_segmento.nombre}}</td>
+            <td>{{RiesgoVariable.fuente_peso_y}}</td>
+            <td>{{RiesgoVariable.fuente_eje_x}}</td>
+            <td>{{RiesgoVariable.fuente_eje_y}}</td>
+            <td>{{RiesgoVariable.fuente_peso_contribuyente}}</td>
+            <td>{{RiesgoVariable.estado}}</td>
+            <td>{{RiesgoVariable.usuario_auditoria}}</td>
+            <td>{{RiesgoVariable.fecha_auditoria}}</td>
+            <td>
+              <button (click)="actualizarRiesgoVariable(RiesgoVariable.id_matriz_riesgo_variable)" class="btn btn-secondary">Editar</button>
+              <button (click)="eliminarRiesgoVariable(RiesgoVariable.id_matriz_riesgo_variable)" class="btn btn-danger mt-2">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <mat-paginator [length]="riesgoVariables?.length"
+                     [pageSize]="pageSize"
+                     aria-label="Select page"
+                     (page)="cambiarPagina($event)">
+      </mat-paginator>
+
+    </div>
+  </div>
+</div>

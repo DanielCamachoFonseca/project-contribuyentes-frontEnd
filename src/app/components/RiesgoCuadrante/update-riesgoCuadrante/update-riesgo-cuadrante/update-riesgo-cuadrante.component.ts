@@ -17,8 +17,8 @@ export class UpdateRiesgoCuadranteComponent implements OnInit {
   riesgos : Riesgo[] = [];
 
   constructor(private riesgoCuadranteService: RiesgoCuadranteService,
-    private router: Router,
-    private route: ActivatedRoute
+              private router: Router,
+              private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -55,6 +55,6 @@ export class UpdateRiesgoCuadranteComponent implements OnInit {
 
   compararRiesgo(o1: Riesgo, o2: Riesgo): boolean {
     if(o1 === undefined && o2 === undefined) return true;
-    return o1 === null || o2 === null || o1 === undefined || o2 === undefined ? false: o1.id == o2.id;
+    return o1 === null || o2 === null || o1 === undefined || o2 === undefined ? false: o1.id_matriz_riesgo == o2.id_matriz_riesgo;
   }
 }

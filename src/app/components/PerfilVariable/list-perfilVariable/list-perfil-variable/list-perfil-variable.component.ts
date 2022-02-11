@@ -12,9 +12,11 @@ import { PerfilVariable } from '../../PerfilVariableModel/perfil-variable';
 export class ListPerfilVariableComponent implements OnInit {
 
   perfilVariables: PerfilVariable[];
-  pageSize = 5;
+  pageSize = 8;
   desde:number = 0;
-  hasta:number = 5;
+  hasta:number = 8;
+
+
 
   constructor(private perfilVariableService: PerfilVariableService, private router: Router, private route: ActivatedRoute ) { }
 

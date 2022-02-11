@@ -23,6 +23,14 @@ import { FooterComponent } from './components/footer/footer/footer.component';
 import { ListPerfilVariableComponent } from './components/PerfilVariable/list-perfilVariable/list-perfil-variable/list-perfil-variable.component';
 import { ListPerfilComponent } from './components/Perfil/list-perfil/list-perfil/list-perfil.component';
 import { ListFuenteInformacionComponent } from './components/FuenteInformacion/list-fuenteInformacion/list-fuente-informacion/list-fuente-informacion.component';
+import { ListRiesgoCuadranteComponent } from './components/RiesgoCuadrante/list-riesgoCuadrante/list-riesgo-cuadrante/list-riesgo-cuadrante.component';
+import { RegisterRiesgoCuadranteComponent } from './components/RiesgoCuadrante/register-riesgoCuadrante/register-riesgo-cuadrante/register-riesgo-cuadrante.component';
+import { UpdateRiesgoCuadranteComponent } from './components/RiesgoCuadrante/update-riesgoCuadrante/update-riesgo-cuadrante/update-riesgo-cuadrante.component';
+import { ListRiesgoVariableComponent } from './components/RiesgoVariable/list-riesgoVariable/list-riesgo-variable/list-riesgo-variable.component';
+import { RegisterRiesgoVariableComponent } from './components/RiesgoVariable/register-riesgoVariable/register-riesgo-variable/register-riesgo-variable.component';
+import { UpdateRiesgoVariableComponent } from './components/RiesgoVariable/update-riesgoVariable/update-riesgo-variable/update-riesgo-variable.component';
+import { FilterPipe } from './pipes/filter.pipe';
+
 
 
 @NgModule({
@@ -42,6 +50,15 @@ import { ListFuenteInformacionComponent } from './components/FuenteInformacion/l
     ListPerfilVariableComponent,
     ListPerfilComponent,
     ListFuenteInformacionComponent,
+    ListRiesgoCuadranteComponent,
+    RegisterRiesgoCuadranteComponent,
+    UpdateRiesgoCuadranteComponent,
+    ListRiesgoVariableComponent,
+    RegisterRiesgoVariableComponent,
+    UpdateRiesgoVariableComponent,
+    FilterPipe,
+
+
 
   ],
   imports: [

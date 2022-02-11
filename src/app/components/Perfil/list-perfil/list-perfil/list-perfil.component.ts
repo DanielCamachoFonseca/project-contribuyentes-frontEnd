@@ -12,9 +12,10 @@ import { Perfil } from '../../PerfilModel/perfil';
 export class ListPerfilComponent implements OnInit {
 
   perfiles: Perfil[];
-  pageSize = 5;
+  pageSize = 8;
   desde:number = 0;
-  hasta:number = 5;
+  hasta:number = 8;
+  filterPerfil = '';
 
   constructor(private perfilService: PerfilService,
               private router: Router,

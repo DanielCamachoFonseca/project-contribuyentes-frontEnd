@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3 class="text-center">Registro Matriz Variable</h3>
+      <form (ngSubmit)="onSubmit()">
+       <div class="form-group">
+         <label for="id_matriz_riesgo" class="col-form-label">Nombre Matriz De Riesgo</label>
+          <select name="id_matriz_riesgo" id="id_matriz_riesgo" [(ngModel)]="riesgoVariable.id_matriz_riesgo" class="form-control">
+            <option [ngValue]="undefined">--- Seleccionar nombre Matriz de Riesgo ---</option>
+            <option *ngFor="let riesgo of riesgos" [ngValue]="riesgo">{{ riesgo.nombre }}</option>
+          </select>
+       </div>
+       <div class="form-group">
+        <label for="id_variable" class="col-form-label">Nombre Matriz Variable</label>
+         <select name="id_variable" id="id_variable" [(ngModel)]="riesgoVariable.id_variable" class="form-control">
+           <option [ngValue]="undefined">--- Seleccionar nombre Matriz Variable ---</option>
+           <option *ngFor="let variable of variables" [ngValue]="variable">{{ variable.nombre }}</option>
+         </select>
+      </div>
+      <div class="form-group">
+        <label for="id_segmento" class="col-form-label">Nombre Matriz Segmento</label>
+         <select name="id_segmento" id="id_segmento" [(ngModel)]="riesgoVariable.id_segmento" class="form-control">
+           <option [ngValue]="undefined">--- Seleccionar nombre Matriz Segmento ---</option>
+           <option *ngFor="let segmento of segmentos" [ngValue]="segmento">{{ segmento.nombre }}</option>
+         </select>
+      </div>
+        <div class="form-group">
+          <label>Fuente Peso Y</label>
+          <input type="text" class="form-control" id="fuente_peso_y" [(ngModel)]="riesgoVariable.fuente_peso_y" name="fuente_peso_y" placeholder="Digite el valor fuente peso Y">
+        </div>
+        <div class="form-group">
+          <label>Fuente Eje X</label>
+          <input type="text" class="form-control" id="fuente_eje_x" [(ngModel)]="riesgoVariable.fuente_eje_x" name="fuente_eje_x" placeholder="Digite fuente eje X">
+        </div>
+        <div class="form-group">
+          <label>Fuente Eje Y</label>
+          <input type="text" class="form-control" id="fuente_eje_y" [(ngModel)]="riesgoVariable.fuente_eje_y" name="fuente_eje_y" placeholder="Digite fuente eje Y">
+        </div>
+        <div class="form-group">
+          <label>Fuente peso Contribuyente</label>
+          <input type="text" class="form-control" id="fuente_peso_contribuyente" [(ngModel)]="riesgoVariable.fuente_peso_contribuyente" name="fuente_peso_contribuyente" placeholder="Digite fuente peso del Contribuyente">
+        </div>
+        <button class="btn btn-success">Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>

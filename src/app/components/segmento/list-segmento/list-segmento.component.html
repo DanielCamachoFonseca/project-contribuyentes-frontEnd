@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-12">
       <table class="table table-striped">
-        <thead class="table-dark">
+        <thead class="table-secondary">
           <tr>
             <th>Id</th>
             <th>Nombre</th>
@@ -25,14 +25,14 @@
         </thead>
         <tbody>
           <tr *ngFor="let segmento of segmentos | slice:desde:hasta">
-            <td>{{segmento.id}}</td>
+            <td>{{segmento.id_segmento}}</td>
             <td>{{segmento.nombre}}</td>
             <td>{{segmento.estado}}</td>
             <td>{{segmento.usuario_auditoria}}</td>
             <td>{{segmento.fecha_auditoria}}</td>
             <td>
-              <button (click)="actualizarSegmento(segmento.id)" class="btn btn-primary">Editar</button>
-              <button (click)="eliminarSegmento(segmento.id)" class="btn btn-danger" style="margin-left: 10px">Eliminar</button>
+              <button (click)="actualizarSegmento(segmento.id_segmento)" class="btn btn-secondary">Editar</button>
+              <button (click)="eliminarSegmento(segmento.id_segmento)" class="btn btn-danger" style="margin-left: 10px">Eliminar</button>
             </td>
           </tr>
         </tbody>

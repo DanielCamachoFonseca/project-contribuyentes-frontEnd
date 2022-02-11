@@ -1,5 +1,5 @@
 export class Segmento {
-  id:number;
+  id_segmento:number;
   nombre:string;
   estado:string;
   usuario_auditoria: string;

@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-12">
       <table class="table table-striped">
-        <thead class="table-dark">
+        <thead class="table-secondary">
           <tr>
             <th>Id Matriz Riesgo Cuadrante</th>
             <th>Nombre Matriz Riesgo</th>
@@ -43,7 +43,7 @@
             <td>{{RiesgoCuadrante.usuario_auditoria}}</td>
             <td>{{RiesgoCuadrante.fecha_auditoria}}</td>
             <td>
-              <button (click)="actualizarRiesgoCuadrante(RiesgoCuadrante.id_matriz_riesgo_cuadrante)" class="btn btn-primary">Editar</button>
+              <button (click)="actualizarRiesgoCuadrante(RiesgoCuadrante.id_matriz_riesgo_cuadrante)" class="btn btn-secondary">Editar</button>
               <button (click)="eliminarRiesgoCuadrante(RiesgoCuadrante.id_matriz_riesgo_cuadrante)" class="btn btn-danger mt-2">Eliminar</button>
             </td>
           </tr>

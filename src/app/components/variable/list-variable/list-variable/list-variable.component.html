@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-12">
       <table class="table table-striped">
-        <thead class="table-dark">
+        <thead class="table-secondary">
           <tr>
             <th>Id</th>
             <th>Nombre</th>
@@ -30,7 +30,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let variable of variables | slice:desde:hasta">
-            <td>{{variable.id}}</td>
+            <td>{{variable.id_variable}}</td>
             <td>{{variable.nombre}}</td>
             <td>{{variable.fuente_sistema}}</td>
             <td>{{variable.fuente_informacion}}</td>
@@ -41,8 +41,8 @@
             <td>{{variable.usuario_auditoria}}</td>
             <td>{{variable.fecha_auditoria}}</td>
             <td>
-              <button (click)="actualizarVariable(variable.id)" class="btn btn-primary">Editar</button>
-              <button (click)="eliminarVariable(variable.id)" class="btn btn-danger">Eliminar</button>
+              <button (click)="actualizarVariable(variable.id_variable)" class="btn btn-secondary">Editar</button>
+              <button (click)="eliminarVariable(variable.id_variable)" class="btn btn-danger mt-2">Eliminar</button>
             </td>
           </tr>
         </tbody>

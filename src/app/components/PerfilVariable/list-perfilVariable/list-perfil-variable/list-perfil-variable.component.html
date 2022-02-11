@@ -6,13 +6,14 @@
   </div>
 </div>
 
+
 <div class="container">
   <div class="row">
     <div class="col-12">
       <table class="table table-striped">
-        <thead class="table-dark">
+        <thead class="table-secondary">
           <tr>
-            <th>Id perfil Variable</th>
+
             <th>Id perfil</th>
             <th>Id Matriz Riesgo Variable</th>
             <th>Id Variable</th>
@@ -20,13 +21,10 @@
             <th>Valor Variable</th>
             <th>Valor Normalizado</th>
             <th>Valor Riesgo</th>
-            <th>Usuario auditoria</th>
-            <th>Fecha auditoria</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let perfilVariable of perfilVariables | slice:desde:hasta">
-            <td>{{perfilVariable.id_perfil_variable}}</td>
             <td>{{perfilVariable.perfil_id}}</td>
             <td>{{perfilVariable.matriz_riesgo_variable_id}}</td>
             <td>{{perfilVariable.variable_id}}</td>
@@ -34,8 +32,6 @@
             <td>{{perfilVariable.valor_variable}}</td>
             <td>{{perfilVariable.valor_normalizado}}</td>
             <td>{{perfilVariable.valor_riesgo}}</td>
-            <td>{{perfilVariable.usuario_auditoria}}</td>
-            <td>{{perfilVariable.fecha_auditoria}}</td>
           </tr>
         </tbody>
       </table>

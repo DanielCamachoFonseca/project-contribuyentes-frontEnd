@@ -1,5 +1,5 @@
 export class Variable {
-  id: number;
+  id_variable: number;
   nombre:string;
   fuente_sistema:string;
   fuente_informacion:string;

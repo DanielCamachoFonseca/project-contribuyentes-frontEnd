@@ -12,9 +12,9 @@ import { FuenteInformacion } from '../../fuenteInformacionModel/fuente-informaci
 export class ListFuenteInformacionComponent implements OnInit {
 
   fuentesInformacion: FuenteInformacion[];
-  pageSize = 5;
+  pageSize = 8;
   desde:number = 0;
-  hasta:number = 5;
+  hasta:number = 8;
 
   constructor(private FuenteInformacionService: FuenteInformacionService,
               private router: Router,

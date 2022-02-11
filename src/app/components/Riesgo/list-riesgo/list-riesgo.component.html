@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-12">
       <table class="table table-striped">
-        <thead class="table-dark">
+        <thead class="table-secondary">
           <tr>
             <th>Id</th>
             <th>Nombre</th>
@@ -27,7 +27,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let riesgo of riesgos | slice:desde:hasta">
-            <td>{{riesgo.id}}</td>
+            <td>{{riesgo.id_matriz_riesgo}}</td>
             <td>{{riesgo.nombre}}</td>
             <td>{{riesgo.fecha_desde}}</td>
             <td>{{riesgo.fecha_hasta}}</td>
@@ -35,8 +35,8 @@
             <td>{{riesgo.usuario_auditoria}}</td>
             <td>{{riesgo.fecha_auditoria}}</td>
             <td>
-              <button (click)="actualizarRiesgo(riesgo.id)" class="btn btn-primary">Editar</button>
-              <button (click)="eliminarRiesgo(riesgo.id)" class="btn btn-danger" style="margin-left: 10px">Eliminar</button>
+              <button (click)="actualizarRiesgo(riesgo.id_matriz_riesgo)" class="btn btn-secondary">Editar</button>
+              <button (click)="eliminarRiesgo(riesgo.id_matriz_riesgo)" class="btn btn-danger" style="margin-left: 10px">Eliminar</button>
             </td>
           </tr>
         </tbody>

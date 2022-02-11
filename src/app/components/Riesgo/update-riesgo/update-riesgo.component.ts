@@ -35,7 +35,7 @@ export class UpdateRiesgoComponent implements OnInit {
   }
 
   Actualizar() {
-    this.riesgoService.actualizarRiesgo(this.riesgo.id, this.riesgo).subscribe(
+    this.riesgoService.actualizarRiesgo(this.riesgo.id_matriz_riesgo, this.riesgo).subscribe(
       (date) => {
         this.redirectUserList();
       },

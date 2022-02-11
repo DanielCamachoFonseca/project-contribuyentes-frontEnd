@@ -33,7 +33,7 @@ export class UpdateVariableComponent implements OnInit {
   }
 
   Actualizar(){
-    this.variableService.actualizarVariable(this.variable.id, this.variable).subscribe(date => {
+    this.variableService.actualizarVariable(this.variable.id_variable, this.variable).subscribe(date => {
       this.redirectToList();
     }, error => console.log(error));
   }

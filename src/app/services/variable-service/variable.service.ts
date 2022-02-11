@@ -34,8 +34,8 @@ export class VariableService {
     );
   }
 
-  actualizarVariable(id: number, variable: Variable): Observable<object> {
-    return this.httpClient.put(`${this.searchIdURL}/${id}`, variable);
+  actualizarVariable(id: number, variable: Variable): Observable<Object> {
+    return this.httpClient.put(`${this.updateURL}/${id}`, variable);
   }
 
   obtenerVariablePorId(id: number): Observable<Variable> {

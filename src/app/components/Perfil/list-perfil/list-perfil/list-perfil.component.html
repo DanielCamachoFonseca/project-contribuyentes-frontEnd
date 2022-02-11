@@ -8,16 +8,36 @@
 
 <div class="container">
   <div class="row">
+    <div class="col-4">
+    <form class="form-inline">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg></span>
+        </div>
+        <input type="text" class="form-control" name="filterPerfil" placeholder="Filtrar NIT ..."
+          [(ngModel)]="filterPerfil">
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
+<th></th>
+<th></th>
+
+<div class="container">
+  <div class="row">
     <div class="col-12">
       <table class="table table-striped">
-        <thead class="table-dark">
+        <thead class="table-secondary">
           <tr>
             <th>Id perfil</th>
             <th>Nit</th>
             <th>Periodo</th>
-            <th>Id Matriz de Riesgo</th>
             <th>Nombre Matriz</th>
-            <th>Id del segmento</th>
             <th>Nombre Segmento</th>
             <th>Fecha desde:</th>
             <th>Peso</th>
@@ -27,18 +47,15 @@
             <th>Valor Incumplimiento</th>
             <th>Valor Log</th>
             <th>Numero del Cuadrante</th>
-            <th>Usuario Auditoria</th>
             <th>Fecha auditoria</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let Perfil of perfiles | slice:desde:hasta">
+          <tr *ngFor="let Perfil of perfiles | slice:desde:hasta | filter:filterPerfil">
             <td>{{Perfil.id_perfil}}</td>
             <td>{{Perfil.nit}}</td>
             <td>{{Perfil.periodo}}</td>
-            <td>{{Perfil.matriz_riesgo_id}}</td>
             <td>{{Perfil.nombre_matriz}}</td>
-            <td>{{Perfil.segmento_id}}</td>
             <td>{{Perfil.nombre_segmento}}</td>
             <td>{{Perfil.fecha_desde}}</td>
             <td>{{Perfil.peso}}</td>
@@ -48,15 +65,12 @@
             <td>{{Perfil.valor_incumplimiento}}</td>
             <td>{{Perfil.valor_log}}</td>
             <td>{{Perfil.numero_cuadrante}}</td>
-            <td>{{Perfil.usuario_auditoria}}</td>
             <td>{{Perfil.fecha_auditoria}}</td>
           </tr>
         </tbody>
       </table>
-      <mat-paginator [length]="perfiles?.length"
-                     [pageSize]="pageSize"
-                     aria-label="Select page"
-                     (page)="cambiarPagina($event)">
+      <mat-paginator [length]="perfiles?.length" [pageSize]="pageSize" aria-label="Select page"
+        (page)="cambiarPagina($event)">
       </mat-paginator>
 
     </div>

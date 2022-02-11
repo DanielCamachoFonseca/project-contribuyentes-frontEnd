@@ -35,7 +35,7 @@ export class UpdateSegmentoComponent implements OnInit {
 
   Actualizar() {
     this.segmentoService
-      .actualizarSegmento(this.segmento.id, this.segmento)
+      .actualizarSegmento(this.segmento.id_segmento, this.segmento)
       .subscribe(
         (date) => {
           this.redirectToList();

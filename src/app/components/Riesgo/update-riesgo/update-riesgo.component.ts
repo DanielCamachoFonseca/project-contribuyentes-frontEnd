@@ -46,10 +46,8 @@ export class UpdateRiesgoComponent implements OnInit {
   //Redirección a lista de usuarios
   redirectUserList() {
     this.router.navigate(['/riesgos']);
-    swal(
-      'Matriz de riesgo actualizado',
-      `${this.riesgo.nombre} ha sido actualizado con exito`,
-      `success`
-    );
+    swal('Actualizado',
+    'Matriz de Riesgo ha sido actualizada con exito!',
+    'success');
   }
 }

@@ -26,7 +26,9 @@ export class RegisterSegmentoComponent implements OnInit {
 
   goToListSegmento(){
     this.router.navigate(['list-segmento']);
-    swal('Matriz de Segmento registrado', `${this.segmento.nombre} ha sido registrado!`);
+    swal('Agregado',
+    '¡Segmento ha sido registrado con exito!',
+    'success');
   }
 
   onSubmit(){

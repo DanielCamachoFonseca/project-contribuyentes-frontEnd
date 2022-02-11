@@ -40,7 +40,9 @@ export class RegisterRiesgoVariableComponent implements OnInit {
 
   goToListRiesgoVariable(){
     this.router.navigate(['list-riesgoVariable']);
-    swal('Matriz Variable ha sido registrada con exito!');
+    swal('Agregado',
+    '¡Matriz Riesgo Variable ha sido registrada con exito!',
+    'success');
   }
 
   onSubmit(){

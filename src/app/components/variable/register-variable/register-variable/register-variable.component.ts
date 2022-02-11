@@ -27,7 +27,9 @@ export class RegisterVariableComponent implements OnInit {
 
   goToListVariable(){
     this.router.navigate(['list-variable']);
-    swal('Matriz de Variable registrado', `${this.variable.nombre} ha sido registrado!`);
+    swal('Agregado',
+    '¡Matriz Variable ha sido registrado con exito!',
+    'success');
   }
 
   onSubmit(){

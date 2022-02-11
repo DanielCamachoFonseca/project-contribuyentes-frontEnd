@@ -40,11 +40,9 @@ export class UpdateVariableComponent implements OnInit {
 
   redirectToList() {
     this.router.navigate(['/list-variable']);
-    swal(
-      'Matriz de variable actualizado',
-      `${this.variable.nombre} ha sido actualizado con exito`,
-      `success`
-    );
+    swal('Actualizado',
+    '¡Variable ha sido actualizado con exito!',
+    'success');
   }
 
 }

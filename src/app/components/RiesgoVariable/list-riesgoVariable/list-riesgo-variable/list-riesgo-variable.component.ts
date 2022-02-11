@@ -60,7 +60,7 @@ export class ListRiesgoVariableComponent implements OnInit {
             this.obtenerRiesgoVariables();
             swal(
               'Eliminado',
-              'La Matriz Riesgo Variable con id ' + id + ' ha sido eliminado con exito',
+              'Matriz Riesgo Variable con id ' + id + ' ha sido eliminado con exito',
               'success'
             )
           })

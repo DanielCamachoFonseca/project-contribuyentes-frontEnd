@@ -46,11 +46,9 @@ export class UpdateRiesgoCuadranteComponent implements OnInit {
 
   redirectUserListRiesgoCuadrante() {
     this.router.navigate(['list-riesgoCuadrante']);
-    swal(
-      'Matriz Cuadrante actualizado',
-      `${this.riesgoCuadrante.id_matriz_riesgo_cuadrante} ha sido actualizado con exito`,
-      `success`
-    );
+    swal('Actualizado',
+    '¡Matriz Cuadrante ha sido actualizado con exito!',
+    'success');
   }
 
   compararRiesgo(o1: Riesgo, o2: Riesgo): boolean {

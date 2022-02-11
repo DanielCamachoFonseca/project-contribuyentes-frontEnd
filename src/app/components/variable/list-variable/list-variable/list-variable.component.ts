@@ -13,9 +13,9 @@ import { Variable } from '../../VariableModel/variable'
 export class ListVariableComponent implements OnInit {
 
   variables: Variable[];
-  pageSize = 5;
+  pageSize = 8;
   desde:number = 0;
-  hasta:number = 5;
+  hasta:number = 8;
 
 
   constructor(private variableService: VariableService, private router: Router, private route: ActivatedRoute) { }
@@ -58,7 +58,7 @@ export class ListVariableComponent implements OnInit {
             this.obtenerVariables();
             swal(
               'Eliminado',
-              'La matriz de variable con id ' + id + ' ha sido eliminado con exito',
+              'Variable con id ' + id + ' ha sido eliminado con exito',
               'success'
             )
           })

@@ -13,9 +13,9 @@ import { PageEvent } from '@angular/material/paginator';
 export class ListRiesgoComponent implements OnInit {
 
   riesgos: Riesgo[];
-  pageSize = 5;
+  pageSize = 8;
   desde:number = 0;
-  hasta:number = 5;
+  hasta:number = 8;
 
   constructor(private riesgoService: RiesgoService, private router: Router) {
 
@@ -59,7 +59,7 @@ export class ListRiesgoComponent implements OnInit {
             this.obtenerRiesgos();
             swal(
               'Eliminado',
-              'La matriz de riesgo con id ' + id + ' ha sido eliminado con exito',
+              'Matriz de Riesgo con id ' + id + ' ha sido eliminado con exito',
               'success'
             )
           })

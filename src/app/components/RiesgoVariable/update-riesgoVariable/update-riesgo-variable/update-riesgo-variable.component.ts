@@ -53,11 +53,9 @@ export class UpdateRiesgoVariableComponent implements OnInit {
 
   redirectUserListRiesgoVariable() {
     this.router.navigate(['list-riesgoVariable']);
-    swal(
-      'Matriz Variable actualizado',
-      `${this.riesgoVariable.id_matriz_riesgo_variable} ha sido actualizado con exito`,
-      `success`
-    );
+    swal('Actualizado',
+    '¡Matriz Riesgo Variable ha sido actualizado con exito!',
+    'success');
   }
 
   compararRiesgo(o1: Riesgo, o2: Riesgo): boolean {

@@ -24,8 +24,7 @@
             <th>Fuente Eje Y</th>
             <th>Fuente Peso Contribuyente</th>
             <th>Estado</th>
-            <th>Usuario auditoria</th>
-            <th>Fecha auditoria</th>
+
             <th>Acciones</th>
           </tr>
         </thead>
@@ -40,8 +39,7 @@
             <td>{{RiesgoVariable.fuente_eje_y}}</td>
             <td>{{RiesgoVariable.fuente_peso_contribuyente}}</td>
             <td>{{RiesgoVariable.estado}}</td>
-            <td>{{RiesgoVariable.usuario_auditoria}}</td>
-            <td>{{RiesgoVariable.fecha_auditoria}}</td>
+
             <td>
               <button (click)="actualizarRiesgoVariable(RiesgoVariable.id_matriz_riesgo_variable)" class="btn btn-secondary">Editar</button>
               <button (click)="eliminarRiesgoVariable(RiesgoVariable.id_matriz_riesgo_variable)" class="btn btn-danger mt-2">Eliminar</button>

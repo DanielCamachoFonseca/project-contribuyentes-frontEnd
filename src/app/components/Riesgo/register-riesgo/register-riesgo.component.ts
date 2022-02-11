@@ -27,7 +27,9 @@ export class RegisterRiesgoComponent implements OnInit {
 
   goToListRiesgo(){
     this.router.navigate(['/riesgos']);
-    swal('Matriz de Riesgo registrado',  `${this.riesgo.nombre} ha sido registrado!`);
+    swal('Agregado',
+    '¡Matriz de Riesgo ha sido registrada con exito!',
+    'success');
   }
 
   onSubmit(){

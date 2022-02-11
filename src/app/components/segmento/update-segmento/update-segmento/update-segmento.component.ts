@@ -46,10 +46,8 @@ export class UpdateSegmentoComponent implements OnInit {
 
   redirectToList() {
     this.router.navigate(['/list-segmento']);
-    swal(
-      'Matriz de Segmento actualizado',
-      `${this.segmento.nombre} ha sido actualizado con exito`,
-      `success`
-    );
+    swal('Actualizado',
+    '¡Segmento ha sido actualizado con exito!',
+    'success');
   }
 }

@@ -31,7 +31,9 @@ export class RegisterRiesgoCuadranteComponent implements OnInit {
 
   goToListRiesgoCuadrante(){
     this.router.navigate(['/list-riesgoCuadrante']);
-    swal('Matriz Cuadrante registrado', `${this.riesgoCuadrante.numero_cuadrante} ha sido registrado!`);
+    swal('Agregado',
+    '¡Matriz Cuadrante ha sido registrado con exito!',
+    'success');
   }
 
   onSubmit(){

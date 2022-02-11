@@ -13,9 +13,9 @@ import { Segmento } from '../SegmentoModel/segmento';
 export class ListSegmentoComponent implements OnInit {
 
   segmentos: Segmento[];
-  pageSize = 5;
+  pageSize = 8;
   desde:number = 0;
-  hasta:number = 5;
+  hasta:number = 8;
 
   constructor(private segmentoService: SegmentoService, private router: Router, private _route:ActivatedRoute,) { }
 
@@ -57,7 +57,7 @@ export class ListSegmentoComponent implements OnInit {
             this.obtenerSegmentos();
             swal(
               'Eliminado',
-              'La matriz de segmento con id ' + id + ' ha sido eliminado con exito',
+              'Segmento con id ' + id + ' ha sido eliminado con exito',
               'success'
             )
           })
